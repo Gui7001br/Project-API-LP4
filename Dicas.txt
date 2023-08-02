@@ -1,0 +1,23 @@
+Inicialização o projeto em PGAdmin.
+1. npm install pg (Para instalar a biblioteca pg);
+2. npm init (Para Inicialização do projeto);
+
+Deve ser criar uma tabela primeiramente:
+
+CREATE TABLE usuario(
+    id int,
+	nome varchar(50),
+	email varchar(50),
+	PRIMARY KEY(id)
+);
+
+Após a criação da tabela deve-se inserir dados na tabela:
+
+INSERT INTO usuario values(1, 'João', 'joao@gmail.com');
+INSERT INTO usuario values(2, 'Maria', 'maria@gmail.com');
+
+Para consultar se realmente os dados foram inseridos utilize o comando 
+
+SELECT * FROM usuario
+
+Pós inserção dos dados deve criar um arquivo chamado index.js
