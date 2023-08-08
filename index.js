@@ -32,10 +32,12 @@ bd.connect((err) => {
  });
 
 // Inserir os dados os dados
-Db.query("INSERT INTO usuario values(id, nome, email) values (3, 'José', 'jose@gmail.com')",
+bd.query("INSERT INTO usuario (id, nome, email) values (3, 'José', 'jose@gmail.com')",
     (err, result) => {
         if(err) {
             console.log("Erro de inserção");
+        } else {
+            console.log("Inserção realizada com sucesso");
         }
     }
 )
