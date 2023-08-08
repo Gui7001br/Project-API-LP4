@@ -46,12 +46,29 @@ bd.query("INSERT INTO usuario (id, nome, email) values (3, 'José', 'jose@gmail.
 // Atualizar os dados do banco de dados
 
 bd.query("UPDATE usuario SET nome = 'Jose da Silva' where id = 3",
-    (err) => {
+    (err,) => {
         if(err) {
             console.log("Erro de atualização");
         } else {
             console.log("Atualização realizada com sucesso");
+
             bd.query('SELECT * FROM usuario') 
+                    .then(result => console.log(result.rows))
+        }
+    }
+)
+
+// Deletar os dados no banco de dados
+
+bd.query("DELETE FROM usuario where id = 3",
+    (err, result) => {
+        if (err) {
+            console.log("Erro ao excluir dado");
+        } else {
+            console.log("Delete realizado com sucesso");
+            console.log(result.rows);
+            
+            bd.query('SELECT * FROM usuario')
                     .then(result => console.log(result.rows))
         }
     }
